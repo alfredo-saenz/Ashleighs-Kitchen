@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function SearchForm(props) {
+function SearchForm({handleSubmit, handleChange, search}) {
     return (
         <div>
-            <form>
-                <input type="text" />
+            <form onSubmit={handleSubmit}>
+                <input
+                type="text"
+                name='search'
+                required
+                onChange={handleChange}
+                value = {search}
+                />
+                <button type='submit'>search</button>
+
             </form>
 
         </div>
