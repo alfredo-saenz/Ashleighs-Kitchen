@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import SearchForm from './components/SearchForm';
 import SearchResults from './components/SearchResults';
 import './App.css';
+import RecipeDetails from './components/RecipeDetails';
+import {Route, Routes, Link} from 'react-router-dom'
 
 function App() {
 const [search, setSearch] = useState('');
@@ -10,11 +12,11 @@ const searchOptions = {
 	key: process.env.REACT_APP_EDAMAM_KEY,
   limit:25,
   api:'https://api.edamam.com',
-  endpoint: '/search',
+  endpoint: '/api/recipes/v2',
   appID: '6a8184b2'
 };
 function getRecipes(search) {
-  const url = `${searchOptions.api}${searchOptions.endpoint}?q=${search}&app_id=${searchOptions.appID}&app_key=${searchOptions.key}`;
+  const url = `${searchOptions.api}${searchOptions.endpoint}?q=${search}&app_id=${searchOptions.appID}&app_key=${searchOptions.key}&type=public`;
 
   fetch(url)
   .then((res) => res.json())
@@ -43,6 +45,9 @@ useEffect(() => {
       <SearchResults recipes={recipes}/>
     </div>
   );
+  <Routes>
+    <Route path='details/:id' element={<RecipeDetails/>}/>
+  </Routes>
 }
 
 export default App;
