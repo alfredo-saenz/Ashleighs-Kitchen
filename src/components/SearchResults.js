@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 function SearchResults({ recipes }) {
 	if (!recipes.length) {
-		return <h3>Uhhhh..... hamburger</h3>;
+		return <h3>Nothing to Display</h3>;
 	}
-	
+
 	return (
 		<div>
 			{recipes.map((recipe) => {

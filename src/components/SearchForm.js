@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 function SearchForm({handleSubmit, handleChange, search}) {
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form className='search-bar' onSubmit={handleSubmit}>
+                <h1 className='logo'>Ashleigh's Kitchen</h1>
                 <input
                 type="text"
                 name='search'
