@@ -40,7 +40,7 @@ function App() {
 	}, []);
 
 	return (
-    <>
+    <body>
     <header>
 
     </header>
@@ -51,17 +51,17 @@ function App() {
 				handleSubmit={handleSubmit}
 				search={search}
 			/>
-			{/* <SearchResults recipes={recipes} /> */}
+			<SearchResults recipes={recipes} />
 		</div>
 
     </main>
 
 	<Routes>
-		<Route path='details/:id' element={<RecipeDetails />} />
+		<Route path='details' element={<RecipeDetails />} />
 	</Routes>
 
 
-    </>
+    </body>
 	)
 }
 
