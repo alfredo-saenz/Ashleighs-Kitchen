@@ -40,29 +40,25 @@ function App() {
 	}, []);
 
 	return (
-    <body>
-    <header>
+		<body>
+			<header></header>
+			<main>
+				<div className='container'>
+					<SearchForm
+						handleChange={handleChange}
+						handleSubmit={handleSubmit}
+						search={search}
+					/>
+					<SearchResults recipes={recipes} />
+				</div>
+			</main>
 
-    </header>
-    <main>
-		<div className='container'>
-			<SearchForm
-				handleChange={handleChange}
-				handleSubmit={handleSubmit}
-				search={search}
-			/>
-			<SearchResults recipes={recipes} />
-		</div>
-
-    </main>
-
-	<Routes>
-		<Route path='details' element={<RecipeDetails />} />
-	</Routes>
-
-
-    </body>
-	)
+			<Routes>
+				{/* <Route path='/' element={<App />}/> */}
+				<Route path='details' element={<RecipeDetails />} />
+			</Routes>
+		</body>
+	);
 }
 
 export default App;

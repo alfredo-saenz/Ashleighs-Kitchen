@@ -77,6 +77,19 @@ input[type="search"]:focus {
 
 }
 
+.recipe-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto auto auto auto;
+
+}
+
+.label {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+
 @media only screen and (max-width: 1430px) {
   .search-bar {
     display: flex;
