@@ -4,7 +4,16 @@ import { Link, useParams } from 'react-router-dom';
 function RecipeDetails(props) {
 	const [recipeDet, setRecipeDet] = useState(null)
 	const { id } = useParams();
+	const searchOptionsDetails = {
+		key: process.env.REACT_APP_EDAMAM_KEY,
+		limit: 25,
+		api: 'https://api.edamam.com',
+		endpoint: '/api/recipes/v2',
+		appID: '6a8184b2',
+	};
+	const url2 = `https://api.edamam.com/api/recipes/v2/${id}?type=public&app_id=${searchOptionsDetails.appID}app_key=${searchOptionsDetails.key}`;
 
+	// `https://api.edamam.com/api/recipes/v2/${id}?type=public&app_id=6a8184b2&app_key=62a5a405e361a6061d328aaa1c86a04c`;
 	useEffect(() => {
   fetch(
 		`https://api.edamam.com/api/recipes/v2/${id}?type=public&app_id=6a8184b2&app_key=62a5a405e361a6061d328aaa1c86a04c`
@@ -29,16 +38,19 @@ function RecipeDetails(props) {
 					</Link>
 				</header>
 				<div className='recipe-details'>
-					<img className='image-details' src={recipeDet.recipe.image} />
+					<img className='image-details' src={recipeDet.recipe.images.LARGE.url} />
+					<div className='ingredient-list'>
+
 					<h3>{recipeDet.recipe.label}</h3>
 					{recipeDet.recipe.ingredientLines.map((ingredient) => {
 						return (
-							<ul>
+							<ul >
 								<li>{ingredient}</li>
 							</ul>
 						)
 					})}
-					<p></p>
+					</div>
+
 				</div>
 			</>
 		</div>

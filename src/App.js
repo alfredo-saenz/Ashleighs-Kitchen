@@ -34,6 +34,7 @@ function App() {
 		event.preventDefault();
 		console.log(event.target);
 		getRecipes(search);
+		setSearch('');
 	}
 	useEffect(() => {
 		// getRecipes(search);
@@ -43,8 +44,6 @@ function App() {
 		<body>
 			<header></header>
 			<Routes>
-				
-
 				<Route
 					path='/'
 					element={
@@ -61,6 +60,7 @@ function App() {
 					}
 				/>
 				<Route path='details/:id' element={<RecipeDetails />} />
+				{/* <Route path='component' element={<SearchResults recipes={recipes} />} /> */}
 			</Routes>
 		</body>
 	);
