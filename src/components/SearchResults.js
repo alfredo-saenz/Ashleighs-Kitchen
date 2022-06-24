@@ -14,7 +14,7 @@ function SearchResults({ recipes }) {
 				// console.log()
 				const recipeID = matchResult[1];
 				return (
-					<Link to={`details/${recipeID}`} key={recipeID}>
+					<Link to={`details/${recipeID}`} key={recipeID} style={{ textDecoration: 'none', color: 'white' }}>
 						<div className='cardbox'>
 							<h1 className='label'>{recipe.recipe.label}</h1>
 							<img src={recipe.recipe.image} />

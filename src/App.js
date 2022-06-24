@@ -42,20 +42,25 @@ function App() {
 	return (
 		<body>
 			<header></header>
-			<main>
-				<div className='container'>
-					<SearchForm
-						handleChange={handleChange}
-						handleSubmit={handleSubmit}
-						search={search}
-					/>
-					<SearchResults recipes={recipes} />
-				</div>
-			</main>
-
 			<Routes>
-				{/* <Route path='/' element={<App />}/> */}
-				<Route path='details' element={<RecipeDetails />} />
+				
+
+				<Route
+					path='/'
+					element={
+						<main>
+							<div className='container'>
+								<SearchForm
+									handleChange={handleChange}
+									handleSubmit={handleSubmit}
+									search={search}
+								/>
+								<SearchResults recipes={recipes} />
+							</div>
+						</main>
+					}
+				/>
+				<Route path='details/:id' element={<RecipeDetails />} />
 			</Routes>
 		</body>
 	);
