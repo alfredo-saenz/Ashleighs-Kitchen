@@ -41,7 +41,7 @@ function RecipeDetails(props) {
 					<img className='image-details' src={recipeDet.recipe.images.LARGE.url} />
 					<div className='ingredient-list'>
 
-					<h3>{recipeDet.recipe.label}</h3>
+					<h3 className='recipe-label'>{recipeDet.recipe.label}</h3>
 					{recipeDet.recipe.ingredientLines.map((ingredient) => {
 						return (
 							<ul >

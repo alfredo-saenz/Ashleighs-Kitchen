@@ -5,7 +5,7 @@ function SearchResults({ recipes }) {
 
 
 	if (!recipes.length) {
-		return <h3>Nothing to Display</h3>;
+		return <h3></h3>;
 	}
 
 	return (
