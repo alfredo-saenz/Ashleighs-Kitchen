@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 function RecipeDetails(props) {
-	const [recipeDet, setRecipeDet] = useState(null)
-	const { id } = useParams();
-	const searchOptionsDetails = {
-		key: process.env.REACT_APP_EDAMAM_KEY,
-		limit: 25,
-		api: 'https://api.edamam.com',
-		endpoint: '/api/recipes/v2',
-		appID: '6a8184b2',
-	};
-	const url2 = `https://api.edamam.com/api/recipes/v2/${id}?type=public&app_id=${searchOptionsDetails.appID}app_key=${searchOptionsDetails.key}`;
+	// const [recipeDet, setRecipeDet] = useState(null)
+	// const { id } = useParams();
+	// const searchOptionsDetails = {
+	// 	key: process.env.REACT_APP_EDAMAM_KEY,
+	// 	limit: 25,
+	// 	api: 'https://api.edamam.com',
+	// 	endpoint: '/api/recipes/v2',
+	// 	appID: '6a8184b2',
+	// };
+	// const url2 = `https://api.edamam.com/api/recipes/v2/${id}?type=public&app_id=${searchOptionsDetails.appID}app_key=${searchOptionsDetails.key}`;
 
 	// `https://api.edamam.com/api/recipes/v2/${id}?type=public&app_id=6a8184b2&app_key=62a5a405e361a6061d328aaa1c86a04c`;
 	useEffect(() => {

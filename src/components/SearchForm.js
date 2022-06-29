@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function SearchForm({ handleSubmit, handleChange, search }) {
+	
 	return (
 		<div>
 			<form className='search-bar' onSubmit={handleSubmit}>
